@@ -62,6 +62,7 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.2;margin-bottom:
 .solution-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
 .solution-card p{font-size:14px;color:var(--gray);line-height:1.6}
 
+
 /* CONTENTS */
 .contents-list{margin-top:40px}
 .content-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
@@ -70,9 +71,16 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.2;margin-bottom:
 .content-item h4{font-size:18px;font-weight:700;margin-bottom:6px}
 .content-item p{font-size:15px;color:var(--gray)}
 
+/* SCENARIOS */
+.scenarios-section{background:var(--dark2)}
+.scenario-card{background:var(--dark3);border-radius:12px;padding:28px 32px;margin-bottom:20px;border-left:4px solid var(--orange);position:relative}
+.scenario-card p{font-size:17px;color:var(--white);line-height:1.8;font-style:italic}
+.scenario-label{font-size:12px;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:12px;display:block}
+
 /* OFFER */
 .offer-section{background:var(--dark2);text-align:center}
 .price-box{background:var(--dark3);border:2px solid var(--orange);border-radius:16px;padding:48px;max-width:520px;margin:0 auto 48px}
+.old-price{font-size:22px;color:var(--gray);text-decoration:line-through;margin-bottom:8px}
 .new-price{font-size:72px;font-weight:900;color:var(--white);line-height:1}
 .price-period{font-size:18px;color:var(--gray)}
 .countdown-box{background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);border-radius:8px;padding:16px;margin:24px 0;font-size:14px;color:var(--orange)}
@@ -102,7 +110,8 @@ footer a:hover{color:var(--white)}
 
 /* RESPONSIVE */
 @media(max-width:640px){
-  .solution-grid{grid-template-columns:1fr}
+  .solution-grid,.testimonials,.proof-stats{grid-template-columns:1fr}
+  .proof-stats{gap:24px}
   section{padding:60px 20px}
 }
 </style>
@@ -182,6 +191,7 @@ footer a:hover{color:var(--white)}
   </div>
 </section>
 
+
 <!-- CONTENTS -->
 <section>
   <div class="container">
@@ -195,6 +205,28 @@ footer a:hover{color:var(--white)}
       <div class="content-item"><span class="content-num">07</span><div><h4>Ernährung &amp; Dopamin</h4><p>Was du essen solltest, um dein Belohnungssystem von innen zu unterstützen.</p></div></div>
       <div class="content-item"><span class="content-num">08</span><div><h4>Bewegung als Booster</h4><p>Warum 20 Minuten täglich mehr bewirken als jedes Supplement.</p></div></div>
       <div class="content-item"><span class="content-num">09–10</span><div><h4>Langfristig &amp; Rückfälle</h4><p>Gewohnheiten nach Tag 21 festigen — und was zu tun ist, wenn du rückfällst.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENARIOS -->
+<section class="scenarios-section">
+  <div class="container">
+    <span class="section-label">So könnte dein Detox aussehen</span>
+    <h2>Was das Programm<br>bei dir verändern kann.</h2>
+    <div style="margin-top:40px">
+      <div class="scenario-card">
+        <p>„Viele Nutzer berichten, dass sie bereits nach der ersten Woche leichter einschlafen – ohne das Handy neben dem Kopfkissen."</p>
+        <span class="scenario-label">Typisches Feedback aus Woche 1</span>
+      </div>
+      <div class="scenario-card">
+        <p>„Ein häufiges Feedback: Die Bildschirmzeit sinkt spürbar, weil das Programm nicht auf Verzicht setzt, sondern auf bewusste Nutzung."</p>
+        <span class="scenario-label">Typisches Feedback aus Woche 2</span>
+      </div>
+      <div class="scenario-card">
+        <p>„Das Kapitel über Ernährung und Dopamin überrascht die meisten – weil der Zusammenhang im Alltag kaum bekannt ist."</p>
+        <span class="scenario-label">Häufige Rückmeldung zu Kapitel 7</span>
+      </div>
     </div>
   </div>
 </section>
