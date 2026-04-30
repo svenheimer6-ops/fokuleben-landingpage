@@ -91,8 +91,7 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.2;margin-bottom:
 .old-price{font-size:22px;color:var(--gray);text-decoration:line-through;margin-bottom:8px}
 .new-price{font-size:72px;font-weight:900;color:var(--white);line-height:1}
 .price-period{font-size:18px;color:var(--gray)}
-.countdown-box{background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);border-radius:8px;padding:16px;margin:24px 0;font-size:14px;color:var(--orange)}
-#countdown{font-weight:900;font-size:20px}
+.intro-price{background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);border-radius:8px;padding:16px;margin:24px 0;font-size:15px;color:var(--orange);font-weight:700;text-align:center}
 .bonus-list{text-align:left;list-style:none;margin:24px 0}
 .bonus-list li{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:15px}
 .bonus-list li::before{content:'✅';font-size:16px}
@@ -271,9 +270,7 @@ footer a:hover{color:var(--white)}
     <div class="price-box">
       <div class="new-price">27€</div>
       <div class="price-period">Einmaliger Kaufpreis · Kein Abo</div>
-      <div class="countdown-box">
-        ⏱ Angebot endet in: <span id="countdown">23:59:59</span>
-      </div>
+      <div class="intro-price">🏷️ Einführungspreis — 27€</div>
       <ul class="bonus-list">
         <li>21-Tage Dopamin-Detox E-Book (10 Kapitel, 75 Seiten)</li>
         <li>Tagesplan-Vorlagen für alle 21 Tage (druckbar)</li>
@@ -345,25 +342,6 @@ footer a:hover{color:var(--white)}
 window.addEventListener('scroll',()=>{
   document.getElementById('stickyHeader').classList.toggle('visible',window.scrollY>300);
 });
-
-// COUNTDOWN
-function updateCountdown(){
-  const key='cdEnd';
-  let end=localStorage.getItem(key);
-  if(!end||Date.now()>parseInt(end)){
-    end=Date.now()+24*60*60*1000;
-    localStorage.setItem(key,end);
-  }
-  const diff=parseInt(end)-Date.now();
-  if(diff<=0){localStorage.removeItem(key);updateCountdown();return;}
-  const h=Math.floor(diff/3600000);
-  const m=Math.floor((diff%3600000)/60000);
-  const s=Math.floor((diff%60000)/1000);
-  document.getElementById('countdown').textContent=
-    String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
-}
-setInterval(updateCountdown,1000);
-updateCountdown();
 
 // FAQ
 function toggleFaq(btn){
